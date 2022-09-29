@@ -1,0 +1,7 @@
+{
+    "eth": {
+        "avalancheNode": "http://xxx.xxx.xxx.xxx:xxxx",
+        "ethereumNode": "http://xxx.xxx.xxx.xxx:xxxx"
+    },
+    "tgToken": "xxx:xxxx"
+}
