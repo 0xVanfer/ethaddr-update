@@ -5,6 +5,7 @@ import (
 	"ethaddr-update/eth"
 	"ethaddr-update/protocols/aave"
 	"ethaddr-update/protocols/compoundlike"
+	"ethaddr-update/protocols/platypus"
 	"ethaddr-update/utils/telegram"
 
 	"github.com/0xVanfer/chainId"
@@ -33,4 +34,5 @@ func main() {
 	aave.AaveV3AvalancheAVS(chainId.AvalancheChainName)
 	compoundlike.BenqiCTokens()
 	compoundlike.TraderjoeCTokens()
+	platypus.PlatypusAvalancheMainPools()
 }
