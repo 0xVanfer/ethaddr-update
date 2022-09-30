@@ -3,9 +3,9 @@ module ethaddr-update
 go 1.19
 
 require (
-	github.com/0xVanfer/abigen v0.1.1
+	github.com/0xVanfer/abigen v0.1.2
 	github.com/0xVanfer/chainId v0.1.0
-	github.com/0xVanfer/ethaddr v0.1.5
+	github.com/0xVanfer/ethaddr v0.2.1
 	github.com/0xVanfer/types v0.1.2
 	github.com/ethereum/go-ethereum v1.10.25
 	github.com/fsnotify/fsnotify v1.5.4

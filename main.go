@@ -34,5 +34,5 @@ func main() {
 	aave.AaveV3AvalancheAVS(chainId.AvalancheChainName)
 	compoundlike.BenqiCTokens()
 	compoundlike.TraderjoeCTokens()
-	platypus.PlatypusAvalancheMainPools()
+	platypus.PlatypusAvalancheLps()
 }
