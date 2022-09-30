@@ -17,7 +17,10 @@ func init() {
 	// cnf := config.GetConfig()
 
 	// initiate eth connection
-	usedChains := []string{chainId.AvalancheChainName, chainId.EthereumChainName}
+	usedChains := []string{
+		chainId.AvalancheChainName,
+		chainId.EthereumChainName,
+		chainId.PolygonChainName}
 	err := eth.InitEthConnectors(usedChains)
 	if err != nil {
 		panic(err)
@@ -32,6 +35,7 @@ func init() {
 
 func main() {
 	aave.AaveV3AvalancheAVS(chainId.AvalancheChainName)
+	aave.AaveV3AvalancheAVS(chainId.PolygonChainName)
 	compoundlike.BenqiCTokens()
 	compoundlike.TraderjoeCTokens()
 	platypus.PlatypusAvalancheLps()

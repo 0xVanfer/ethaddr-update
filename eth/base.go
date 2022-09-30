@@ -9,6 +9,7 @@ import (
 )
 
 var connectorAvax *ethclient.Client
+var connectorPolygon *ethclient.Client
 var connectorEth *ethclient.Client
 
 func InitEthConnectors(networks []string) (err error) {
@@ -19,6 +20,8 @@ func InitEthConnectors(networks []string) (err error) {
 			connectorAvax, err = ethclient.Dial(cnf.Eth.AvalancheNode)
 		case chainId.EthereumChainName:
 			connectorEth, err = ethclient.Dial(cnf.Eth.EthereumNode)
+		case chainId.PolygonChainName:
+			connectorPolygon, err = ethclient.Dial(cnf.Eth.PolygonNode)
 		}
 		if err != nil {
 			fmt.Println(network, "eth provider connection failed:", err)
@@ -33,6 +36,7 @@ func GetConnector(network string) (conn *ethclient.Client) {
 	var ConnectorMap = map[string]*ethclient.Client{
 		chainId.AvalancheChainName: connectorAvax,
 		chainId.EthereumChainName:  connectorEth,
+		chainId.PolygonChainName:   connectorPolygon,
 	}
 	return ConnectorMap[network]
 }
