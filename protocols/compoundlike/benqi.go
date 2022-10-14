@@ -16,7 +16,7 @@ func BenqiCTokens() {
 	comptroller, _ := benqiComptroller.NewBenqiComptroller(types.ToAddress(comptrollerAddress), eth.GetConnector(network))
 	allMarkets, _ := comptroller.GetAllMarkets(nil)
 	for _, ctoken := range allMarkets {
-		common.FindAndAlarm(types.ToString(ctoken), ethaddr.BenqiCTokenList[network], "Benqi CToken", types.ToLowerString(ctoken), "not found.")
+		common.FindAndAlarm(types.ToString(ctoken), ethaddr.BenqiCTokenList[network], "Benqi CToken", network, types.ToLowerString(ctoken), "not found.")
 	}
 }
 
@@ -26,6 +26,6 @@ func TraderjoeCTokens() {
 	comptroller, _ := benqiComptroller.NewBenqiComptroller(types.ToAddress(comptrollerAddress), eth.GetConnector(network))
 	allMarkets, _ := comptroller.GetAllMarkets(nil)
 	for _, ctoken := range allMarkets {
-		common.FindAndAlarm(types.ToString(ctoken), ethaddr.TraderjoeCTokenList[network], "Traderjoe CToken", types.ToLowerString(ctoken), "not found.")
+		common.FindAndAlarm(types.ToString(ctoken), ethaddr.TraderjoeCTokenList[network], "Traderjoe CToken", network, types.ToLowerString(ctoken), "not found.")
 	}
 }

@@ -21,10 +21,10 @@ func AaveV3AvalancheAVS(network string) {
 	for _, underlying := range underlyings {
 		addrs, _ := provider.GetReserveTokensAddresses(nil, underlying.TokenAddress)
 		// atokens
-		common.FindAndAlarm(addrs.ATokenAddress, ethaddr.AaveATokenV3List[network], "Aave", underlying.Symbol, "AToken:", types.ToLowerString(addrs.ATokenAddress), "not found.")
+		common.FindAndAlarm(addrs.ATokenAddress, ethaddr.AaveATokenV3List[network], "Aave", network, underlying.Symbol, "AToken:", types.ToLowerString(addrs.ATokenAddress), "not found.")
 		// vtokens
-		common.FindAndAlarm(addrs.VariableDebtTokenAddress, ethaddr.AaveVTokenV3List[network], "Aave", underlying.Symbol, "VToken:", types.ToLowerString(addrs.VariableDebtTokenAddress), "not found.")
+		common.FindAndAlarm(addrs.VariableDebtTokenAddress, ethaddr.AaveVTokenV3List[network], "Aave", network, underlying.Symbol, "VToken:", types.ToLowerString(addrs.VariableDebtTokenAddress), "not found.")
 		// stokens
-		common.FindAndAlarm(addrs.StableDebtTokenAddress, ethaddr.AaveSTokenV3List[network], "Aave", underlying.Symbol, "SToken:", types.ToLowerString(addrs.StableDebtTokenAddress), "not found.")
+		common.FindAndAlarm(addrs.StableDebtTokenAddress, ethaddr.AaveSTokenV3List[network], "Aave", network, underlying.Symbol, "SToken:", types.ToLowerString(addrs.StableDebtTokenAddress), "not found.")
 	}
 }

@@ -34,6 +34,8 @@ func init() {
 }
 
 func main() {
+	aave.AaveV2AvalancheAVS(chainId.AvalancheChainName)
+	aave.AaveV2AvalancheAVS(chainId.EthereumChainName)
 	aave.AaveV3AvalancheAVS(chainId.AvalancheChainName)
 	aave.AaveV3AvalancheAVS(chainId.PolygonChainName)
 	compoundlike.BenqiCTokens()
