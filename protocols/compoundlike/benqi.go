@@ -3,6 +3,7 @@ package compoundlike
 import (
 	"ethaddr-update/eth"
 	"ethaddr-update/utils/common"
+	"fmt"
 
 	"github.com/0xVanfer/abigen/benqi/benqiComptroller"
 	"github.com/0xVanfer/chainId"
@@ -18,6 +19,7 @@ func BenqiCTokens() {
 	for _, ctoken := range allMarkets {
 		common.FindAndAlarm(types.ToString(ctoken), ethaddr.BenqiCTokenList[network], "Benqi CToken", network, types.ToLowerString(ctoken), "not found.")
 	}
+	fmt.Println("benqi c token checked.")
 }
 
 func TraderjoeCTokens() {
@@ -28,4 +30,5 @@ func TraderjoeCTokens() {
 	for _, ctoken := range allMarkets {
 		common.FindAndAlarm(types.ToString(ctoken), ethaddr.TraderjoeCTokenList[network], "Traderjoe CToken", network, types.ToLowerString(ctoken), "not found.")
 	}
+	fmt.Println("traderjoe c token checked.")
 }

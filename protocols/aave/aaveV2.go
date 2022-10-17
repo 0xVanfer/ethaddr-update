@@ -3,6 +3,7 @@ package aave
 import (
 	"errors"
 	"ethaddr-update/utils/common"
+	"fmt"
 	"strings"
 
 	"github.com/0xVanfer/chainId"
@@ -12,7 +13,7 @@ import (
 )
 
 // Aave v2 avalanche AVSTokens check.
-func AaveV2AvalancheAVS(network string) {
+func AaveV2AVS(network string) {
 	pools, _ := ReqAavePools(network)
 	for _, pool := range pools {
 		if pool.Symbol[:3] == "Amm" {
@@ -25,6 +26,7 @@ func AaveV2AvalancheAVS(network string) {
 		// stokens
 		common.FindAndAlarm(pool.SToken.ID, ethaddr.AaveSTokenV2List[network], "Aave", network, pool.Symbol, "SToken:", types.ToLowerString(pool.SToken.ID), "not found.")
 	}
+	fmt.Println("aave v2", network, "checked.")
 }
 
 type aaveAllReservesReq struct {

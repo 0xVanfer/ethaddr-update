@@ -3,6 +3,7 @@ package platypus
 import (
 	"ethaddr-update/eth"
 	"ethaddr-update/utils/common"
+	"fmt"
 	"strings"
 
 	"github.com/0xVanfer/abigen/platypus/platypusMasterPlatypusV4"
@@ -38,4 +39,5 @@ func PlatypusAvalancheLps() {
 		}
 		common.ProcessBool(!found, "Platypus lack lp:", lp)
 	}
+	fmt.Println("platypus lps checked.")
 }

@@ -3,14 +3,15 @@ package aave
 import (
 	"ethaddr-update/eth"
 	"ethaddr-update/utils/common"
+	"fmt"
 
 	"github.com/0xVanfer/abigen/aave/aavePoolDataProvider"
 	"github.com/0xVanfer/ethaddr"
 	"github.com/0xVanfer/types"
 )
 
-// Aave v3 avalanche AVSTokens check.
-func AaveV3AvalancheAVS(network string) {
+// Aave v3 AVSTokens check.
+func AaveV3AVS(network string) {
 	// eth connector
 	connector := eth.GetConnector(network)
 	// data provider
@@ -27,4 +28,5 @@ func AaveV3AvalancheAVS(network string) {
 		// stokens
 		common.FindAndAlarm(addrs.StableDebtTokenAddress, ethaddr.AaveSTokenV3List[network], "Aave", network, underlying.Symbol, "SToken:", types.ToLowerString(addrs.StableDebtTokenAddress), "not found.")
 	}
+	fmt.Println("aave v3", network, "checked.")
 }
